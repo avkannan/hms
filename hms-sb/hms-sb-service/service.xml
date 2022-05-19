@@ -44,4 +44,176 @@
 			<order-column name="displayName" />
 		</order>
 	</entity>
+	<entity local-service="true" name="staff" remote-service="true"
+		uuid="true">
+
+		<!-- PK fields -->
+		<column name="staffID" primary="true" type="long" />
+
+		<!-- Group instance -->
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+
+		<column name="firstName" type="String" />
+		<column name="middleName" type="String" />
+		<column name="lastName" type="String" />
+		<column name="displayName" type="String" />
+		<column name="salutation" type="String" />
+		<column name="staffType" type="String" />
+		<column name="designation" type="String" />
+		<column name="qualifcation" type="String" />
+		<column name="experience" type="long" />
+
+
+		<!-- Order -->
+
+		<order by="asc">
+			<order-column name="displayName" />
+		</order>
+	</entity>
+	<entity local-service="true" name="roomBooking"
+		remote-service="true" uuid="true">
+
+		<!-- PK fields -->
+		<column name="bookingID" primary="true" type="long" />
+
+		<!-- Group instance -->
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+
+		<column name="roomID" type="long" />
+		<column name="customerID" type="String" />
+		<column name="bookId" type="long" />
+		<column name="rent" type="float" />
+		<column name="checkoutDate" type="Date" />
+		<column name="duration" type="long" />
+		<column name="checkinDate" type="Date" />
+		<column name="cancelledDate" type="Date" />
+
+		<!-- Order -->
+
+		<order by="asc">
+			<order-column name="createDate" />
+		</order>
+	</entity>
+
+<entity local-service="true" name="staff" remote-service="true"
+		uuid="true">
+
+		<!-- PK fields -->
+		<column name="staffID" primary="true" type="long" />
+
+		<!-- Group instance -->
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+
+		<column name="firstName" type="String" />
+		<column name="middleName" type="String" />
+		<column name="lastName" type="String" />
+		<column name="displayName" type="String" />
+		<column name="salutation" type="String" />
+		<column name="staffType" type="String" />
+		<column name="designation" type="String" />
+		<column name="qualifcation" type="String" />
+		<column name="experience" type="long" />
+
+
+		<!-- Order -->
+
+		<order by="asc">
+			<order-column name="displayName" />
+		</order>
+	</entity>
+	<entity local-service="true" name="roomBooking"
+		remote-service="true" uuid="true">
+
+		<!-- PK fields -->
+		<column name="bookingID" primary="true" type="long" />
+
+		<!-- Group instance -->
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+
+		<column name="roomID" type="long" />
+		<column name="customerID" type="String" />
+		<column name="bookId" type="long" />
+		<column name="rent" type="float" />
+		<column name="checkoutDate" type="Date" />
+		<column name="duration" type="long" />
+		<column name="checkinDate" type="Date" />
+		<column name="cancelledDate" type="Date" />
+
+		<!-- Order -->
+
+		<order by="asc">
+			<order-column name="createDate" />
+		</order>
+	</entity>
+	<entity local-service="true" name="room"
+		remote-service="true" uuid="true">
+
+		<!-- PK fields -->
+		<column name="roomID" primary="true" type="long" />
+
+		<!-- Group instance -->
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+
+		<column name="roomSize" type="String" />
+		<column name="images" type="String" />
+		<column name="roomNo" type="long" />
+		<column name="facilities" type="String" />
+
+		<!-- Order -->
+
+		<order by="asc">
+			<order-column name="roomNo" />
+		</order>
+	</entity>
+	
 </service-builder>
