@@ -46,6 +46,7 @@
 		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="images" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="roomNo" type="com.liferay.portal.dao.orm.hibernate.LongType" />
 		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="facilities" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="facilities2" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 	</class>
 	<class name="com.um.ace.qa.hms.sb.model.impl.roomBookingImpl" table="hms_roomBooking">
 		<id access="com.liferay.portal.dao.orm.hibernate.LiferayPropertyAccessor" name="bookingID" type="long">

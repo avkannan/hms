@@ -46,6 +46,7 @@ public class roomSoap implements Serializable {
 		soapModel.setImages(model.getImages());
 		soapModel.setRoomNo(model.getRoomNo());
 		soapModel.setFacilities(model.getFacilities());
+		soapModel.setFacilities2(model.getFacilities2());
 
 		return soapModel;
 	}
@@ -194,6 +195,14 @@ public class roomSoap implements Serializable {
 		_facilities = facilities;
 	}
 
+	public String getFacilities2() {
+		return _facilities2;
+	}
+
+	public void setFacilities2(String facilities2) {
+		_facilities2 = facilities2;
+	}
+
 	private String _uuid;
 	private long _roomID;
 	private long _groupId;
@@ -206,5 +215,6 @@ public class roomSoap implements Serializable {
 	private String _images;
 	private long _roomNo;
 	private String _facilities;
+	private String _facilities2;
 
 }

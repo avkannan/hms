@@ -208,6 +208,7 @@
 		<column name="images" type="String" />
 		<column name="roomNo" type="long" />
 		<column name="facilities" type="String" />
+		<column name="facilities2" type="String" />
 
 		<!-- Order -->
 

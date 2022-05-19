@@ -57,6 +57,7 @@ public class roomWrapper
 		attributes.put("images", getImages());
 		attributes.put("roomNo", getRoomNo());
 		attributes.put("facilities", getFacilities());
+		attributes.put("facilities2", getFacilities2());
 
 		return attributes;
 	}
@@ -134,6 +135,12 @@ public class roomWrapper
 		if (facilities != null) {
 			setFacilities(facilities);
 		}
+
+		String facilities2 = (String)attributes.get("facilities2");
+
+		if (facilities2 != null) {
+			setFacilities2(facilities2);
+		}
 	}
 
 	/**
@@ -164,6 +171,16 @@ public class roomWrapper
 	@Override
 	public String getFacilities() {
 		return model.getFacilities();
+	}
+
+	/**
+	 * Returns the facilities2 of this room.
+	 *
+	 * @return the facilities2 of this room
+	 */
+	@Override
+	public String getFacilities2() {
+		return model.getFacilities2();
 	}
 
 	/**
@@ -309,6 +326,16 @@ public class roomWrapper
 	@Override
 	public void setFacilities(String facilities) {
 		model.setFacilities(facilities);
+	}
+
+	/**
+	 * Sets the facilities2 of this room.
+	 *
+	 * @param facilities2 the facilities2 of this room
+	 */
+	@Override
+	public void setFacilities2(String facilities2) {
+		model.setFacilities2(facilities2);
 	}
 
 	/**

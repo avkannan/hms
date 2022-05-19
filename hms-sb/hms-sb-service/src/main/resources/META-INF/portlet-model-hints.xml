@@ -37,6 +37,7 @@
 		<field name="images" type="String" />
 		<field name="roomNo" type="long" />
 		<field name="facilities" type="String" />
+		<field name="facilities2" type="String" />
 	</model>
 	<model name="com.um.ace.qa.hms.sb.model.roomBooking">
 		<field name="uuid" type="String" />

@@ -34,7 +34,8 @@ create table hms_room (
 	roomSize VARCHAR(75) null,
 	images VARCHAR(75) null,
 	roomNo LONG,
-	facilities VARCHAR(75) null
+	facilities VARCHAR(75) null,
+	facilities2 VARCHAR(75) null
 );
 
 create table hms_roomBooking (

@@ -262,4 +262,19 @@ public interface roomModel
 	 */
 	public void setFacilities(String facilities);
 
+	/**
+	 * Returns the facilities2 of this room.
+	 *
+	 * @return the facilities2 of this room
+	 */
+	@AutoEscape
+	public String getFacilities2();
+
+	/**
+	 * Sets the facilities2 of this room.
+	 *
+	 * @param facilities2 the facilities2 of this room
+	 */
+	public void setFacilities2(String facilities2);
+
 }

@@ -64,7 +64,7 @@ public class roomCacheModel implements CacheModel<room>, Externalizable {
 
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(25);
+		StringBundler sb = new StringBundler(27);
 
 		sb.append("{uuid=");
 		sb.append(uuid);
@@ -90,6 +90,8 @@ public class roomCacheModel implements CacheModel<room>, Externalizable {
 		sb.append(roomNo);
 		sb.append(", facilities=");
 		sb.append(facilities);
+		sb.append(", facilities2=");
+		sb.append(facilities2);
 		sb.append("}");
 
 		return sb.toString();
@@ -155,6 +157,13 @@ public class roomCacheModel implements CacheModel<room>, Externalizable {
 			roomImpl.setFacilities(facilities);
 		}
 
+		if (facilities2 == null) {
+			roomImpl.setFacilities2("");
+		}
+		else {
+			roomImpl.setFacilities2(facilities2);
+		}
+
 		roomImpl.resetOriginalValues();
 
 		return roomImpl;
@@ -179,6 +188,7 @@ public class roomCacheModel implements CacheModel<room>, Externalizable {
 
 		roomNo = objectInput.readLong();
 		facilities = objectInput.readUTF();
+		facilities2 = objectInput.readUTF();
 	}
 
 	@Override
@@ -230,6 +240,13 @@ public class roomCacheModel implements CacheModel<room>, Externalizable {
 		else {
 			objectOutput.writeUTF(facilities);
 		}
+
+		if (facilities2 == null) {
+			objectOutput.writeUTF("");
+		}
+		else {
+			objectOutput.writeUTF(facilities2);
+		}
 	}
 
 	public String uuid;
@@ -244,5 +261,6 @@ public class roomCacheModel implements CacheModel<room>, Externalizable {
 	public String images;
 	public long roomNo;
 	public String facilities;
+	public String facilities2;
 
 }

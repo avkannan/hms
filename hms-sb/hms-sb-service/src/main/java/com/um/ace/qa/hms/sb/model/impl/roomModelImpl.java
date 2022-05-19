@@ -79,7 +79,8 @@ public class roomModelImpl extends BaseModelImpl<room> implements roomModel {
 		{"userId", Types.BIGINT}, {"userName", Types.VARCHAR},
 		{"createDate", Types.TIMESTAMP}, {"modifiedDate", Types.TIMESTAMP},
 		{"roomSize", Types.VARCHAR}, {"images", Types.VARCHAR},
-		{"roomNo", Types.BIGINT}, {"facilities", Types.VARCHAR}
+		{"roomNo", Types.BIGINT}, {"facilities", Types.VARCHAR},
+		{"facilities2", Types.VARCHAR}
 	};
 
 	public static final Map<String, Integer> TABLE_COLUMNS_MAP =
@@ -98,10 +99,11 @@ public class roomModelImpl extends BaseModelImpl<room> implements roomModel {
 		TABLE_COLUMNS_MAP.put("images", Types.VARCHAR);
 		TABLE_COLUMNS_MAP.put("roomNo", Types.BIGINT);
 		TABLE_COLUMNS_MAP.put("facilities", Types.VARCHAR);
+		TABLE_COLUMNS_MAP.put("facilities2", Types.VARCHAR);
 	}
 
 	public static final String TABLE_SQL_CREATE =
-		"create table hms_room (uuid_ VARCHAR(75) null,roomID LONG not null primary key,groupId LONG,companyId LONG,userId LONG,userName VARCHAR(75) null,createDate DATE null,modifiedDate DATE null,roomSize VARCHAR(75) null,images VARCHAR(75) null,roomNo LONG,facilities VARCHAR(75) null)";
+		"create table hms_room (uuid_ VARCHAR(75) null,roomID LONG not null primary key,groupId LONG,companyId LONG,userId LONG,userName VARCHAR(75) null,createDate DATE null,modifiedDate DATE null,roomSize VARCHAR(75) null,images VARCHAR(75) null,roomNo LONG,facilities VARCHAR(75) null,facilities2 VARCHAR(75) null)";
 
 	public static final String TABLE_SQL_DROP = "drop table hms_room";
 
@@ -156,6 +158,7 @@ public class roomModelImpl extends BaseModelImpl<room> implements roomModel {
 		model.setImages(soapModel.getImages());
 		model.setRoomNo(soapModel.getRoomNo());
 		model.setFacilities(soapModel.getFacilities());
+		model.setFacilities2(soapModel.getFacilities2());
 
 		return model;
 	}
@@ -310,6 +313,9 @@ public class roomModelImpl extends BaseModelImpl<room> implements roomModel {
 		attributeGetterFunctions.put("facilities", room::getFacilities);
 		attributeSetterBiConsumers.put(
 			"facilities", (BiConsumer<room, String>)room::setFacilities);
+		attributeGetterFunctions.put("facilities2", room::getFacilities2);
+		attributeSetterBiConsumers.put(
+			"facilities2", (BiConsumer<room, String>)room::setFacilities2);
 
 		_attributeGetterFunctions = Collections.unmodifiableMap(
 			attributeGetterFunctions);
@@ -532,6 +538,22 @@ public class roomModelImpl extends BaseModelImpl<room> implements roomModel {
 		_facilities = facilities;
 	}
 
+	@JSON
+	@Override
+	public String getFacilities2() {
+		if (_facilities2 == null) {
+			return "";
+		}
+		else {
+			return _facilities2;
+		}
+	}
+
+	@Override
+	public void setFacilities2(String facilities2) {
+		_facilities2 = facilities2;
+	}
+
 	@Override
 	public StagedModelType getStagedModelType() {
 		return new StagedModelType(
@@ -582,6 +604,7 @@ public class roomModelImpl extends BaseModelImpl<room> implements roomModel {
 		roomImpl.setImages(getImages());
 		roomImpl.setRoomNo(getRoomNo());
 		roomImpl.setFacilities(getFacilities());
+		roomImpl.setFacilities2(getFacilities2());
 
 		roomImpl.resetOriginalValues();
 
@@ -737,6 +760,14 @@ public class roomModelImpl extends BaseModelImpl<room> implements roomModel {
 			roomCacheModel.facilities = null;
 		}
 
+		roomCacheModel.facilities2 = getFacilities2();
+
+		String facilities2 = roomCacheModel.facilities2;
+
+		if ((facilities2 != null) && (facilities2.length() == 0)) {
+			roomCacheModel.facilities2 = null;
+		}
+
 		return roomCacheModel;
 	}
 
@@ -826,6 +857,7 @@ public class roomModelImpl extends BaseModelImpl<room> implements roomModel {
 	private String _images;
 	private long _roomNo;
 	private String _facilities;
+	private String _facilities2;
 	private long _columnBitmask;
 	private room _escapedModel;
 
