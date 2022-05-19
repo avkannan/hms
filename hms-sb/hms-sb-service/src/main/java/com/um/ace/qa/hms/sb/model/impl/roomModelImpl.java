@@ -80,7 +80,9 @@ public class roomModelImpl extends BaseModelImpl<room> implements roomModel {
 		{"createDate", Types.TIMESTAMP}, {"modifiedDate", Types.TIMESTAMP},
 		{"roomSize", Types.VARCHAR}, {"images", Types.VARCHAR},
 		{"roomNo", Types.BIGINT}, {"roomName", Types.VARCHAR},
-		{"facilities", Types.VARCHAR}, {"facilities2", Types.VARCHAR}
+		{"facilities", Types.VARCHAR}, {"facilities2", Types.VARCHAR},
+		{"payment", Types.BIGINT}, {"carddetails", Types.BIGINT},
+		{"cvv", Types.BIGINT}
 	};
 
 	public static final Map<String, Integer> TABLE_COLUMNS_MAP =
@@ -101,10 +103,13 @@ public class roomModelImpl extends BaseModelImpl<room> implements roomModel {
 		TABLE_COLUMNS_MAP.put("roomName", Types.VARCHAR);
 		TABLE_COLUMNS_MAP.put("facilities", Types.VARCHAR);
 		TABLE_COLUMNS_MAP.put("facilities2", Types.VARCHAR);
+		TABLE_COLUMNS_MAP.put("payment", Types.BIGINT);
+		TABLE_COLUMNS_MAP.put("carddetails", Types.BIGINT);
+		TABLE_COLUMNS_MAP.put("cvv", Types.BIGINT);
 	}
 
 	public static final String TABLE_SQL_CREATE =
-		"create table hms_room (uuid_ VARCHAR(75) null,roomID LONG not null primary key,groupId LONG,companyId LONG,userId LONG,userName VARCHAR(75) null,createDate DATE null,modifiedDate DATE null,roomSize VARCHAR(75) null,images VARCHAR(75) null,roomNo LONG,roomName VARCHAR(75) null,facilities VARCHAR(75) null,facilities2 VARCHAR(75) null)";
+		"create table hms_room (uuid_ VARCHAR(75) null,roomID LONG not null primary key,groupId LONG,companyId LONG,userId LONG,userName VARCHAR(75) null,createDate DATE null,modifiedDate DATE null,roomSize VARCHAR(75) null,images VARCHAR(75) null,roomNo LONG,roomName VARCHAR(75) null,facilities VARCHAR(75) null,facilities2 VARCHAR(75) null,payment LONG,carddetails LONG,cvv LONG)";
 
 	public static final String TABLE_SQL_DROP = "drop table hms_room";
 
@@ -161,6 +166,9 @@ public class roomModelImpl extends BaseModelImpl<room> implements roomModel {
 		model.setRoomName(soapModel.getRoomName());
 		model.setFacilities(soapModel.getFacilities());
 		model.setFacilities2(soapModel.getFacilities2());
+		model.setPayment(soapModel.getPayment());
+		model.setCarddetails(soapModel.getCarddetails());
+		model.setCvv(soapModel.getCvv());
 
 		return model;
 	}
@@ -321,6 +329,15 @@ public class roomModelImpl extends BaseModelImpl<room> implements roomModel {
 		attributeGetterFunctions.put("facilities2", room::getFacilities2);
 		attributeSetterBiConsumers.put(
 			"facilities2", (BiConsumer<room, String>)room::setFacilities2);
+		attributeGetterFunctions.put("payment", room::getPayment);
+		attributeSetterBiConsumers.put(
+			"payment", (BiConsumer<room, Long>)room::setPayment);
+		attributeGetterFunctions.put("carddetails", room::getCarddetails);
+		attributeSetterBiConsumers.put(
+			"carddetails", (BiConsumer<room, Long>)room::setCarddetails);
+		attributeGetterFunctions.put("cvv", room::getCvv);
+		attributeSetterBiConsumers.put(
+			"cvv", (BiConsumer<room, Long>)room::setCvv);
 
 		_attributeGetterFunctions = Collections.unmodifiableMap(
 			attributeGetterFunctions);
@@ -575,6 +592,39 @@ public class roomModelImpl extends BaseModelImpl<room> implements roomModel {
 		_facilities2 = facilities2;
 	}
 
+	@JSON
+	@Override
+	public long getPayment() {
+		return _payment;
+	}
+
+	@Override
+	public void setPayment(long payment) {
+		_payment = payment;
+	}
+
+	@JSON
+	@Override
+	public long getCarddetails() {
+		return _carddetails;
+	}
+
+	@Override
+	public void setCarddetails(long carddetails) {
+		_carddetails = carddetails;
+	}
+
+	@JSON
+	@Override
+	public long getCvv() {
+		return _cvv;
+	}
+
+	@Override
+	public void setCvv(long cvv) {
+		_cvv = cvv;
+	}
+
 	@Override
 	public StagedModelType getStagedModelType() {
 		return new StagedModelType(
@@ -627,6 +677,9 @@ public class roomModelImpl extends BaseModelImpl<room> implements roomModel {
 		roomImpl.setRoomName(getRoomName());
 		roomImpl.setFacilities(getFacilities());
 		roomImpl.setFacilities2(getFacilities2());
+		roomImpl.setPayment(getPayment());
+		roomImpl.setCarddetails(getCarddetails());
+		roomImpl.setCvv(getCvv());
 
 		roomImpl.resetOriginalValues();
 
@@ -798,6 +851,12 @@ public class roomModelImpl extends BaseModelImpl<room> implements roomModel {
 			roomCacheModel.facilities2 = null;
 		}
 
+		roomCacheModel.payment = getPayment();
+
+		roomCacheModel.carddetails = getCarddetails();
+
+		roomCacheModel.cvv = getCvv();
+
 		return roomCacheModel;
 	}
 
@@ -889,6 +948,9 @@ public class roomModelImpl extends BaseModelImpl<room> implements roomModel {
 	private String _roomName;
 	private String _facilities;
 	private String _facilities2;
+	private long _payment;
+	private long _carddetails;
+	private long _cvv;
 	private long _columnBitmask;
 	private room _escapedModel;
 

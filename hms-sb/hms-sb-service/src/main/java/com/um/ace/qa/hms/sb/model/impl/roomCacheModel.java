@@ -64,7 +64,7 @@ public class roomCacheModel implements CacheModel<room>, Externalizable {
 
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(29);
+		StringBundler sb = new StringBundler(35);
 
 		sb.append("{uuid=");
 		sb.append(uuid);
@@ -94,6 +94,12 @@ public class roomCacheModel implements CacheModel<room>, Externalizable {
 		sb.append(facilities);
 		sb.append(", facilities2=");
 		sb.append(facilities2);
+		sb.append(", payment=");
+		sb.append(payment);
+		sb.append(", carddetails=");
+		sb.append(carddetails);
+		sb.append(", cvv=");
+		sb.append(cvv);
 		sb.append("}");
 
 		return sb.toString();
@@ -173,6 +179,10 @@ public class roomCacheModel implements CacheModel<room>, Externalizable {
 			roomImpl.setFacilities2(facilities2);
 		}
 
+		roomImpl.setPayment(payment);
+		roomImpl.setCarddetails(carddetails);
+		roomImpl.setCvv(cvv);
+
 		roomImpl.resetOriginalValues();
 
 		return roomImpl;
@@ -199,6 +209,12 @@ public class roomCacheModel implements CacheModel<room>, Externalizable {
 		roomName = objectInput.readUTF();
 		facilities = objectInput.readUTF();
 		facilities2 = objectInput.readUTF();
+
+		payment = objectInput.readLong();
+
+		carddetails = objectInput.readLong();
+
+		cvv = objectInput.readLong();
 	}
 
 	@Override
@@ -264,6 +280,12 @@ public class roomCacheModel implements CacheModel<room>, Externalizable {
 		else {
 			objectOutput.writeUTF(facilities2);
 		}
+
+		objectOutput.writeLong(payment);
+
+		objectOutput.writeLong(carddetails);
+
+		objectOutput.writeLong(cvv);
 	}
 
 	public String uuid;
@@ -280,5 +302,8 @@ public class roomCacheModel implements CacheModel<room>, Externalizable {
 	public String roomName;
 	public String facilities;
 	public String facilities2;
+	public long payment;
+	public long carddetails;
+	public long cvv;
 
 }
