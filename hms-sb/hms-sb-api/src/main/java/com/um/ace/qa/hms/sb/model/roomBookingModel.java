@@ -248,20 +248,6 @@ public interface roomBookingModel
 	public void setBookId(long bookId);
 
 	/**
-	 * Returns the rent of this room booking.
-	 *
-	 * @return the rent of this room booking
-	 */
-	public float getRent();
-
-	/**
-	 * Sets the rent of this room booking.
-	 *
-	 * @param rent the rent of this room booking
-	 */
-	public void setRent(float rent);
-
-	/**
 	 * Returns the checkout date of this room booking.
 	 *
 	 * @return the checkout date of this room booking

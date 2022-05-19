@@ -57,7 +57,6 @@ public class roomBookingWrapper
 		attributes.put("roomID", getRoomID());
 		attributes.put("customerID", getCustomerID());
 		attributes.put("bookId", getBookId());
-		attributes.put("rent", getRent());
 		attributes.put("checkoutDate", getCheckoutDate());
 		attributes.put("duration", getDuration());
 		attributes.put("checkinDate", getCheckinDate());
@@ -132,12 +131,6 @@ public class roomBookingWrapper
 
 		if (bookId != null) {
 			setBookId(bookId);
-		}
-
-		Float rent = (Float)attributes.get("rent");
-
-		if (rent != null) {
-			setRent(rent);
 		}
 
 		Date checkoutDate = (Date)attributes.get("checkoutDate");
@@ -283,16 +276,6 @@ public class roomBookingWrapper
 	@Override
 	public long getPrimaryKey() {
 		return model.getPrimaryKey();
-	}
-
-	/**
-	 * Returns the rent of this room booking.
-	 *
-	 * @return the rent of this room booking
-	 */
-	@Override
-	public float getRent() {
-		return model.getRent();
 	}
 
 	/**
@@ -468,16 +451,6 @@ public class roomBookingWrapper
 	@Override
 	public void setPrimaryKey(long primaryKey) {
 		model.setPrimaryKey(primaryKey);
-	}
-
-	/**
-	 * Sets the rent of this room booking.
-	 *
-	 * @param rent the rent of this room booking
-	 */
-	@Override
-	public void setRent(float rent) {
-		model.setRent(rent);
 	}
 
 	/**

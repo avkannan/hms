@@ -45,7 +45,6 @@ public class roomBookingSoap implements Serializable {
 		soapModel.setRoomID(model.getRoomID());
 		soapModel.setCustomerID(model.getCustomerID());
 		soapModel.setBookId(model.getBookId());
-		soapModel.setRent(model.getRent());
 		soapModel.setCheckoutDate(model.getCheckoutDate());
 		soapModel.setDuration(model.getDuration());
 		soapModel.setCheckinDate(model.getCheckinDate());
@@ -191,14 +190,6 @@ public class roomBookingSoap implements Serializable {
 		_bookId = bookId;
 	}
 
-	public float getRent() {
-		return _rent;
-	}
-
-	public void setRent(float rent) {
-		_rent = rent;
-	}
-
 	public Date getCheckoutDate() {
 		return _checkoutDate;
 	}
@@ -242,7 +233,6 @@ public class roomBookingSoap implements Serializable {
 	private long _roomID;
 	private String _customerID;
 	private long _bookId;
-	private float _rent;
 	private Date _checkoutDate;
 	private long _duration;
 	private Date _checkinDate;
