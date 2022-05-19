@@ -47,6 +47,7 @@ import com.um.ace.qa.hms.sb.model.staff;
 import com.um.ace.qa.hms.sb.service.persistence.customerPersistence;
 import com.um.ace.qa.hms.sb.service.persistence.roomBookingPersistence;
 import com.um.ace.qa.hms.sb.service.persistence.roomPersistence;
+import com.um.ace.qa.hms.sb.service.persistence.room_newPersistence;
 import com.um.ace.qa.hms.sb.service.persistence.staffPersistence;
 import com.um.ace.qa.hms.sb.service.staffLocalService;
 
@@ -513,6 +514,9 @@ public abstract class staffLocalServiceBaseImpl
 
 	@Reference
 	protected roomPersistence roomPersistence;
+
+	@Reference
+	protected room_newPersistence room_newPersistence;
 
 	@Reference
 	protected roomBookingPersistence roomBookingPersistence;

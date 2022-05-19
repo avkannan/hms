@@ -43,6 +43,25 @@
 		<field name="carddetails" type="long" />
 		<field name="cvv" type="long" />
 	</model>
+	<model name="com.um.ace.qa.hms.sb.model.room_new">
+		<field name="uuid" type="String" />
+		<field name="roomID" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="roomSize" type="String" />
+		<field name="images" type="String" />
+		<field name="roomNo" type="long" />
+		<field name="roomName" type="String" />
+		<field name="facilities" type="String" />
+		<field name="facilities2" type="String" />
+		<field name="payment" type="long" />
+		<field name="carddetails" type="long" />
+		<field name="cvv" type="long" />
+	</model>
 	<model name="com.um.ace.qa.hms.sb.model.roomBooking">
 		<field name="uuid" type="String" />
 		<field name="bookingID" type="long" />

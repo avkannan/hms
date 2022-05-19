@@ -24,4 +24,78 @@
 		<field name="zip" type="long" />
 		<field name="phone" type="long" />
 	</model>
+	<model name="com.um.ace.qa.hms.sb.model.room">
+		<field name="uuid" type="String" />
+		<field name="roomID" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="roomSize" type="String" />
+		<field name="images" type="String" />
+		<field name="roomNo" type="long" />
+		<field name="roomName" type="String" />
+		<field name="facilities" type="String" />
+		<field name="facilities2" type="String" />
+		<field name="payment" type="long" />
+		<field name="carddetails" type="long" />
+		<field name="cvv" type="long" />
+	</model>
+	<model name="com.um.ace.qa.hms.sb.model.room_new">
+		<field name="uuid" type="String" />
+		<field name="roomID" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="roomSize" type="String" />
+		<field name="images" type="String" />
+		<field name="roomNo" type="long" />
+		<field name="roomName" type="String" />
+		<field name="facilities" type="String" />
+		<field name="facilities2" type="String" />
+		<field name="payment" type="long" />
+		<field name="carddetails" type="long" />
+		<field name="cvv" type="long" />
+	</model>
+	<model name="com.um.ace.qa.hms.sb.model.roomBooking">
+		<field name="uuid" type="String" />
+		<field name="bookingID" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="roomID" type="long" />
+		<field name="customerID" type="String" />
+		<field name="bookId" type="long" />
+		<field name="checkoutDate" type="Date" />
+		<field name="duration" type="long" />
+		<field name="checkinDate" type="Date" />
+		<field name="cancelledDate" type="Date" />
+	</model>
+	<model name="com.um.ace.qa.hms.sb.model.staff">
+		<field name="uuid" type="String" />
+		<field name="staffID" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="firstName" type="String" />
+		<field name="middleName" type="String" />
+		<field name="lastName" type="String" />
+		<field name="displayName" type="String" />
+		<field name="salutationw" type="String" />
+		<field name="salutation" type="String" />
+		<field name="designation" type="String" />
+		<field name="qualifcation" type="String" />
+		<field name="experience" type="long" />
+	</model>
 </model-hints>
