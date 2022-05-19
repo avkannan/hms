@@ -1,3 +1,25 @@
+create table hms_address (
+	uuid_ VARCHAR(75) null,
+	roomID LONG not null primary key,
+	groupId LONG,
+	companyId LONG,
+	userId LONG,
+	userName VARCHAR(75) null,
+	createDate DATE null,
+	modifiedDate DATE null,
+	roomSize VARCHAR(75) null,
+	images VARCHAR(75) null,
+	roomNo LONG,
+	roomName VARCHAR(75) null,
+	facilities VARCHAR(75) null,
+	facilities2 VARCHAR(75) null,
+	facilities3 VARCHAR(75) null,
+	facilities4 VARCHAR(75) null,
+	payment LONG,
+	carddetails LONG,
+	cvv LONG
+);
+
 create table hms_customer (
 	uuid_ VARCHAR(75) null,
 	customerID LONG not null primary key,
@@ -20,6 +42,50 @@ create table hms_customer (
 	state_ LONG,
 	zip LONG,
 	phone LONG
+);
+
+create table hms_feedback (
+	uuid_ VARCHAR(75) null,
+	roomID LONG not null primary key,
+	groupId LONG,
+	companyId LONG,
+	userId LONG,
+	userName VARCHAR(75) null,
+	createDate DATE null,
+	modifiedDate DATE null,
+	roomSize VARCHAR(75) null,
+	images VARCHAR(75) null,
+	roomNo LONG,
+	roomName VARCHAR(75) null,
+	facilities VARCHAR(75) null,
+	facilities2 VARCHAR(75) null,
+	facilities3 VARCHAR(75) null,
+	facilities4 VARCHAR(75) null,
+	payment LONG,
+	carddetails LONG,
+	cvv LONG
+);
+
+create table hms_image (
+	uuid_ VARCHAR(75) null,
+	roomID LONG not null primary key,
+	groupId LONG,
+	companyId LONG,
+	userId LONG,
+	userName VARCHAR(75) null,
+	createDate DATE null,
+	modifiedDate DATE null,
+	roomSize VARCHAR(75) null,
+	images VARCHAR(75) null,
+	roomNo LONG,
+	roomName VARCHAR(75) null,
+	facilities VARCHAR(75) null,
+	facilities2 VARCHAR(75) null,
+	facilities3 VARCHAR(75) null,
+	facilities4 VARCHAR(75) null,
+	payment LONG,
+	carddetails LONG,
+	cvv LONG
 );
 
 create table hms_room (

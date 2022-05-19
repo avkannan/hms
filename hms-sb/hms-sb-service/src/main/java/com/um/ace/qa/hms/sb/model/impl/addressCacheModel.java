@@ -1,0 +1,345 @@
+/**
+ * Copyright (c) 2000-present Liferay, Inc. All rights reserved.
+ *
+ * This library is free software; you can redistribute it and/or modify it under
+ * the terms of the GNU Lesser General Public License as published by the Free
+ * Software Foundation; either version 2.1 of the License, or (at your option)
+ * any later version.
+ *
+ * This library is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
+ * details.
+ */
+
+package com.um.ace.qa.hms.sb.model.impl;
+
+import com.liferay.petra.lang.HashUtil;
+import com.liferay.petra.string.StringBundler;
+import com.liferay.portal.kernel.model.CacheModel;
+
+import com.um.ace.qa.hms.sb.model.address;
+
+import java.io.Externalizable;
+import java.io.IOException;
+import java.io.ObjectInput;
+import java.io.ObjectOutput;
+
+import java.util.Date;
+
+import org.osgi.annotation.versioning.ProviderType;
+
+/**
+ * The cache model class for representing address in entity cache.
+ *
+ * @author Brian Wing Shun Chan
+ * @generated
+ */
+@ProviderType
+public class addressCacheModel implements CacheModel<address>, Externalizable {
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+
+		if (!(obj instanceof addressCacheModel)) {
+			return false;
+		}
+
+		addressCacheModel addressCacheModel = (addressCacheModel)obj;
+
+		if (roomID == addressCacheModel.roomID) {
+			return true;
+		}
+
+		return false;
+	}
+
+	@Override
+	public int hashCode() {
+		return HashUtil.hash(0, roomID);
+	}
+
+	@Override
+	public String toString() {
+		StringBundler sb = new StringBundler(39);
+
+		sb.append("{uuid=");
+		sb.append(uuid);
+		sb.append(", roomID=");
+		sb.append(roomID);
+		sb.append(", groupId=");
+		sb.append(groupId);
+		sb.append(", companyId=");
+		sb.append(companyId);
+		sb.append(", userId=");
+		sb.append(userId);
+		sb.append(", userName=");
+		sb.append(userName);
+		sb.append(", createDate=");
+		sb.append(createDate);
+		sb.append(", modifiedDate=");
+		sb.append(modifiedDate);
+		sb.append(", roomSize=");
+		sb.append(roomSize);
+		sb.append(", images=");
+		sb.append(images);
+		sb.append(", roomNo=");
+		sb.append(roomNo);
+		sb.append(", roomName=");
+		sb.append(roomName);
+		sb.append(", facilities=");
+		sb.append(facilities);
+		sb.append(", facilities2=");
+		sb.append(facilities2);
+		sb.append(", facilities3=");
+		sb.append(facilities3);
+		sb.append(", facilities4=");
+		sb.append(facilities4);
+		sb.append(", payment=");
+		sb.append(payment);
+		sb.append(", carddetails=");
+		sb.append(carddetails);
+		sb.append(", cvv=");
+		sb.append(cvv);
+		sb.append("}");
+
+		return sb.toString();
+	}
+
+	@Override
+	public address toEntityModel() {
+		addressImpl addressImpl = new addressImpl();
+
+		if (uuid == null) {
+			addressImpl.setUuid("");
+		}
+		else {
+			addressImpl.setUuid(uuid);
+		}
+
+		addressImpl.setRoomID(roomID);
+		addressImpl.setGroupId(groupId);
+		addressImpl.setCompanyId(companyId);
+		addressImpl.setUserId(userId);
+
+		if (userName == null) {
+			addressImpl.setUserName("");
+		}
+		else {
+			addressImpl.setUserName(userName);
+		}
+
+		if (createDate == Long.MIN_VALUE) {
+			addressImpl.setCreateDate(null);
+		}
+		else {
+			addressImpl.setCreateDate(new Date(createDate));
+		}
+
+		if (modifiedDate == Long.MIN_VALUE) {
+			addressImpl.setModifiedDate(null);
+		}
+		else {
+			addressImpl.setModifiedDate(new Date(modifiedDate));
+		}
+
+		if (roomSize == null) {
+			addressImpl.setRoomSize("");
+		}
+		else {
+			addressImpl.setRoomSize(roomSize);
+		}
+
+		if (images == null) {
+			addressImpl.setImages("");
+		}
+		else {
+			addressImpl.setImages(images);
+		}
+
+		addressImpl.setRoomNo(roomNo);
+
+		if (roomName == null) {
+			addressImpl.setRoomName("");
+		}
+		else {
+			addressImpl.setRoomName(roomName);
+		}
+
+		if (facilities == null) {
+			addressImpl.setFacilities("");
+		}
+		else {
+			addressImpl.setFacilities(facilities);
+		}
+
+		if (facilities2 == null) {
+			addressImpl.setFacilities2("");
+		}
+		else {
+			addressImpl.setFacilities2(facilities2);
+		}
+
+		if (facilities3 == null) {
+			addressImpl.setFacilities3("");
+		}
+		else {
+			addressImpl.setFacilities3(facilities3);
+		}
+
+		if (facilities4 == null) {
+			addressImpl.setFacilities4("");
+		}
+		else {
+			addressImpl.setFacilities4(facilities4);
+		}
+
+		addressImpl.setPayment(payment);
+		addressImpl.setCarddetails(carddetails);
+		addressImpl.setCvv(cvv);
+
+		addressImpl.resetOriginalValues();
+
+		return addressImpl;
+	}
+
+	@Override
+	public void readExternal(ObjectInput objectInput) throws IOException {
+		uuid = objectInput.readUTF();
+
+		roomID = objectInput.readLong();
+
+		groupId = objectInput.readLong();
+
+		companyId = objectInput.readLong();
+
+		userId = objectInput.readLong();
+		userName = objectInput.readUTF();
+		createDate = objectInput.readLong();
+		modifiedDate = objectInput.readLong();
+		roomSize = objectInput.readUTF();
+		images = objectInput.readUTF();
+
+		roomNo = objectInput.readLong();
+		roomName = objectInput.readUTF();
+		facilities = objectInput.readUTF();
+		facilities2 = objectInput.readUTF();
+		facilities3 = objectInput.readUTF();
+		facilities4 = objectInput.readUTF();
+
+		payment = objectInput.readLong();
+
+		carddetails = objectInput.readLong();
+
+		cvv = objectInput.readLong();
+	}
+
+	@Override
+	public void writeExternal(ObjectOutput objectOutput) throws IOException {
+		if (uuid == null) {
+			objectOutput.writeUTF("");
+		}
+		else {
+			objectOutput.writeUTF(uuid);
+		}
+
+		objectOutput.writeLong(roomID);
+
+		objectOutput.writeLong(groupId);
+
+		objectOutput.writeLong(companyId);
+
+		objectOutput.writeLong(userId);
+
+		if (userName == null) {
+			objectOutput.writeUTF("");
+		}
+		else {
+			objectOutput.writeUTF(userName);
+		}
+
+		objectOutput.writeLong(createDate);
+		objectOutput.writeLong(modifiedDate);
+
+		if (roomSize == null) {
+			objectOutput.writeUTF("");
+		}
+		else {
+			objectOutput.writeUTF(roomSize);
+		}
+
+		if (images == null) {
+			objectOutput.writeUTF("");
+		}
+		else {
+			objectOutput.writeUTF(images);
+		}
+
+		objectOutput.writeLong(roomNo);
+
+		if (roomName == null) {
+			objectOutput.writeUTF("");
+		}
+		else {
+			objectOutput.writeUTF(roomName);
+		}
+
+		if (facilities == null) {
+			objectOutput.writeUTF("");
+		}
+		else {
+			objectOutput.writeUTF(facilities);
+		}
+
+		if (facilities2 == null) {
+			objectOutput.writeUTF("");
+		}
+		else {
+			objectOutput.writeUTF(facilities2);
+		}
+
+		if (facilities3 == null) {
+			objectOutput.writeUTF("");
+		}
+		else {
+			objectOutput.writeUTF(facilities3);
+		}
+
+		if (facilities4 == null) {
+			objectOutput.writeUTF("");
+		}
+		else {
+			objectOutput.writeUTF(facilities4);
+		}
+
+		objectOutput.writeLong(payment);
+
+		objectOutput.writeLong(carddetails);
+
+		objectOutput.writeLong(cvv);
+	}
+
+	public String uuid;
+	public long roomID;
+	public long groupId;
+	public long companyId;
+	public long userId;
+	public String userName;
+	public long createDate;
+	public long modifiedDate;
+	public String roomSize;
+	public String images;
+	public long roomNo;
+	public String roomName;
+	public String facilities;
+	public String facilities2;
+	public String facilities3;
+	public String facilities4;
+	public long payment;
+	public long carddetails;
+	public long cvv;
+
+}

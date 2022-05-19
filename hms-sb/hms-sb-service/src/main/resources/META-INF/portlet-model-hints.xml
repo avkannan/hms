@@ -1,6 +1,27 @@
 <?xml version="1.0"?>
 
 <model-hints>
+	<model name="com.um.ace.qa.hms.sb.model.address">
+		<field name="uuid" type="String" />
+		<field name="roomID" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="roomSize" type="String" />
+		<field name="images" type="String" />
+		<field name="roomNo" type="long" />
+		<field name="roomName" type="String" />
+		<field name="facilities" type="String" />
+		<field name="facilities2" type="String" />
+		<field name="facilities3" type="String" />
+		<field name="facilities4" type="String" />
+		<field name="payment" type="long" />
+		<field name="carddetails" type="long" />
+		<field name="cvv" type="long" />
+	</model>
 	<model name="com.um.ace.qa.hms.sb.model.customer">
 		<field name="uuid" type="String" />
 		<field name="customerID" type="long" />
@@ -23,6 +44,48 @@
 		<field name="state" type="long" />
 		<field name="zip" type="long" />
 		<field name="phone" type="long" />
+	</model>
+	<model name="com.um.ace.qa.hms.sb.model.feedback">
+		<field name="uuid" type="String" />
+		<field name="roomID" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="roomSize" type="String" />
+		<field name="images" type="String" />
+		<field name="roomNo" type="long" />
+		<field name="roomName" type="String" />
+		<field name="facilities" type="String" />
+		<field name="facilities2" type="String" />
+		<field name="facilities3" type="String" />
+		<field name="facilities4" type="String" />
+		<field name="payment" type="long" />
+		<field name="carddetails" type="long" />
+		<field name="cvv" type="long" />
+	</model>
+	<model name="com.um.ace.qa.hms.sb.model.image">
+		<field name="uuid" type="String" />
+		<field name="roomID" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="roomSize" type="String" />
+		<field name="images" type="String" />
+		<field name="roomNo" type="long" />
+		<field name="roomName" type="String" />
+		<field name="facilities" type="String" />
+		<field name="facilities2" type="String" />
+		<field name="facilities3" type="String" />
+		<field name="facilities4" type="String" />
+		<field name="payment" type="long" />
+		<field name="carddetails" type="long" />
+		<field name="cvv" type="long" />
 	</model>
 	<model name="com.um.ace.qa.hms.sb.model.room">
 		<field name="uuid" type="String" />

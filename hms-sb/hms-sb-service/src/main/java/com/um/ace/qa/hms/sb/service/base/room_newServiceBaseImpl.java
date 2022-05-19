@@ -25,7 +25,10 @@ import com.liferay.portal.kernel.service.BaseServiceImpl;
 import com.liferay.portal.kernel.util.PortalUtil;
 
 import com.um.ace.qa.hms.sb.model.room_new;
+import com.um.ace.qa.hms.sb.service.persistence.addressPersistence;
 import com.um.ace.qa.hms.sb.service.persistence.customerPersistence;
+import com.um.ace.qa.hms.sb.service.persistence.feedbackPersistence;
+import com.um.ace.qa.hms.sb.service.persistence.imagePersistence;
 import com.um.ace.qa.hms.sb.service.persistence.roomBookingPersistence;
 import com.um.ace.qa.hms.sb.service.persistence.roomPersistence;
 import com.um.ace.qa.hms.sb.service.persistence.room_newPersistence;
@@ -111,7 +114,16 @@ public abstract class room_newServiceBaseImpl
 	}
 
 	@Reference
+	protected addressPersistence addressPersistence;
+
+	@Reference
 	protected customerPersistence customerPersistence;
+
+	@Reference
+	protected feedbackPersistence feedbackPersistence;
+
+	@Reference
+	protected imagePersistence imagePersistence;
 
 	@Reference
 	protected roomPersistence roomPersistence;
