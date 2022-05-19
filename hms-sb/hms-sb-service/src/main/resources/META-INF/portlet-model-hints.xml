@@ -36,6 +36,7 @@
 		<field name="roomSize" type="String" />
 		<field name="images" type="String" />
 		<field name="roomNo" type="long" />
+		<field name="roomName" type="String" />
 		<field name="facilities" type="String" />
 		<field name="facilities2" type="String" />
 	</model>

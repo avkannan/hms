@@ -79,8 +79,8 @@ public class roomModelImpl extends BaseModelImpl<room> implements roomModel {
 		{"userId", Types.BIGINT}, {"userName", Types.VARCHAR},
 		{"createDate", Types.TIMESTAMP}, {"modifiedDate", Types.TIMESTAMP},
 		{"roomSize", Types.VARCHAR}, {"images", Types.VARCHAR},
-		{"roomNo", Types.BIGINT}, {"facilities", Types.VARCHAR},
-		{"facilities2", Types.VARCHAR}
+		{"roomNo", Types.BIGINT}, {"roomName", Types.VARCHAR},
+		{"facilities", Types.VARCHAR}, {"facilities2", Types.VARCHAR}
 	};
 
 	public static final Map<String, Integer> TABLE_COLUMNS_MAP =
@@ -98,12 +98,13 @@ public class roomModelImpl extends BaseModelImpl<room> implements roomModel {
 		TABLE_COLUMNS_MAP.put("roomSize", Types.VARCHAR);
 		TABLE_COLUMNS_MAP.put("images", Types.VARCHAR);
 		TABLE_COLUMNS_MAP.put("roomNo", Types.BIGINT);
+		TABLE_COLUMNS_MAP.put("roomName", Types.VARCHAR);
 		TABLE_COLUMNS_MAP.put("facilities", Types.VARCHAR);
 		TABLE_COLUMNS_MAP.put("facilities2", Types.VARCHAR);
 	}
 
 	public static final String TABLE_SQL_CREATE =
-		"create table hms_room (uuid_ VARCHAR(75) null,roomID LONG not null primary key,groupId LONG,companyId LONG,userId LONG,userName VARCHAR(75) null,createDate DATE null,modifiedDate DATE null,roomSize VARCHAR(75) null,images VARCHAR(75) null,roomNo LONG,facilities VARCHAR(75) null,facilities2 VARCHAR(75) null)";
+		"create table hms_room (uuid_ VARCHAR(75) null,roomID LONG not null primary key,groupId LONG,companyId LONG,userId LONG,userName VARCHAR(75) null,createDate DATE null,modifiedDate DATE null,roomSize VARCHAR(75) null,images VARCHAR(75) null,roomNo LONG,roomName VARCHAR(75) null,facilities VARCHAR(75) null,facilities2 VARCHAR(75) null)";
 
 	public static final String TABLE_SQL_DROP = "drop table hms_room";
 
@@ -157,6 +158,7 @@ public class roomModelImpl extends BaseModelImpl<room> implements roomModel {
 		model.setRoomSize(soapModel.getRoomSize());
 		model.setImages(soapModel.getImages());
 		model.setRoomNo(soapModel.getRoomNo());
+		model.setRoomName(soapModel.getRoomName());
 		model.setFacilities(soapModel.getFacilities());
 		model.setFacilities2(soapModel.getFacilities2());
 
@@ -310,6 +312,9 @@ public class roomModelImpl extends BaseModelImpl<room> implements roomModel {
 		attributeGetterFunctions.put("roomNo", room::getRoomNo);
 		attributeSetterBiConsumers.put(
 			"roomNo", (BiConsumer<room, Long>)room::setRoomNo);
+		attributeGetterFunctions.put("roomName", room::getRoomName);
+		attributeSetterBiConsumers.put(
+			"roomName", (BiConsumer<room, String>)room::setRoomName);
 		attributeGetterFunctions.put("facilities", room::getFacilities);
 		attributeSetterBiConsumers.put(
 			"facilities", (BiConsumer<room, String>)room::setFacilities);
@@ -524,6 +529,22 @@ public class roomModelImpl extends BaseModelImpl<room> implements roomModel {
 
 	@JSON
 	@Override
+	public String getRoomName() {
+		if (_roomName == null) {
+			return "";
+		}
+		else {
+			return _roomName;
+		}
+	}
+
+	@Override
+	public void setRoomName(String roomName) {
+		_roomName = roomName;
+	}
+
+	@JSON
+	@Override
 	public String getFacilities() {
 		if (_facilities == null) {
 			return "";
@@ -603,6 +624,7 @@ public class roomModelImpl extends BaseModelImpl<room> implements roomModel {
 		roomImpl.setRoomSize(getRoomSize());
 		roomImpl.setImages(getImages());
 		roomImpl.setRoomNo(getRoomNo());
+		roomImpl.setRoomName(getRoomName());
 		roomImpl.setFacilities(getFacilities());
 		roomImpl.setFacilities2(getFacilities2());
 
@@ -752,6 +774,14 @@ public class roomModelImpl extends BaseModelImpl<room> implements roomModel {
 
 		roomCacheModel.roomNo = getRoomNo();
 
+		roomCacheModel.roomName = getRoomName();
+
+		String roomName = roomCacheModel.roomName;
+
+		if ((roomName != null) && (roomName.length() == 0)) {
+			roomCacheModel.roomName = null;
+		}
+
 		roomCacheModel.facilities = getFacilities();
 
 		String facilities = roomCacheModel.facilities;
@@ -856,6 +886,7 @@ public class roomModelImpl extends BaseModelImpl<room> implements roomModel {
 	private String _roomSize;
 	private String _images;
 	private long _roomNo;
+	private String _roomName;
 	private String _facilities;
 	private String _facilities2;
 	private long _columnBitmask;
