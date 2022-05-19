@@ -219,5 +219,40 @@
 			<order-column name="roomNo" />
 		</order>
 	</entity>
+	<entity local-service="true" name="room_new"
+		remote-service="true" uuid="true">
+
+		<!-- PK fields -->
+		<column name="roomID" primary="true" type="long" />
+
+		<!-- Group instance -->
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+
+		<column name="roomSize" type="String" />
+		<column name="images" type="String" />
+		<column name="roomNo" type="long" />
+		<column name="roomName" type="String" />
+		<column name="facilities" type="String" />
+		<column name="facilities2" type="String" />
+		<column name="payment" type="long" />
+		<column name="carddetails" type="long" />
+		<column name="cvv" type="long" />
+
+		<!-- Order -->
+
+		<order by="asc">
+			<order-column name="roomNo" />
+		</order>
+	</entity>
 	
 </service-builder>
