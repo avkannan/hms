@@ -51,7 +51,6 @@ create table hms_roomBooking (
 	roomID LONG,
 	customerID VARCHAR(75) null,
 	bookId LONG,
-	rent DOUBLE,
 	checkoutDate DATE null,
 	duration LONG,
 	checkinDate DATE null,

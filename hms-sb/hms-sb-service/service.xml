@@ -173,7 +173,6 @@
 		<column name="roomID" type="long" />
 		<column name="customerID" type="String" />
 		<column name="bookId" type="long" />
-		<column name="rent" type="float" />
 		<column name="checkoutDate" type="Date" />
 		<column name="duration" type="long" />
 		<column name="checkinDate" type="Date" />

@@ -52,7 +52,6 @@
 		<field name="roomID" type="long" />
 		<field name="customerID" type="String" />
 		<field name="bookId" type="long" />
-		<field name="rent" type="float" />
 		<field name="checkoutDate" type="Date" />
 		<field name="duration" type="long" />
 		<field name="checkinDate" type="Date" />

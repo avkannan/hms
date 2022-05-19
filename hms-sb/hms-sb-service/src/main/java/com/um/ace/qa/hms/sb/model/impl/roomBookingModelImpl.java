@@ -81,9 +81,9 @@ public class roomBookingModelImpl
 		{"userId", Types.BIGINT}, {"userName", Types.VARCHAR},
 		{"createDate", Types.TIMESTAMP}, {"modifiedDate", Types.TIMESTAMP},
 		{"roomID", Types.BIGINT}, {"customerID", Types.VARCHAR},
-		{"bookId", Types.BIGINT}, {"rent", Types.FLOAT},
-		{"checkoutDate", Types.TIMESTAMP}, {"duration", Types.BIGINT},
-		{"checkinDate", Types.TIMESTAMP}, {"cancelledDate", Types.TIMESTAMP}
+		{"bookId", Types.BIGINT}, {"checkoutDate", Types.TIMESTAMP},
+		{"duration", Types.BIGINT}, {"checkinDate", Types.TIMESTAMP},
+		{"cancelledDate", Types.TIMESTAMP}
 	};
 
 	public static final Map<String, Integer> TABLE_COLUMNS_MAP =
@@ -101,7 +101,6 @@ public class roomBookingModelImpl
 		TABLE_COLUMNS_MAP.put("roomID", Types.BIGINT);
 		TABLE_COLUMNS_MAP.put("customerID", Types.VARCHAR);
 		TABLE_COLUMNS_MAP.put("bookId", Types.BIGINT);
-		TABLE_COLUMNS_MAP.put("rent", Types.FLOAT);
 		TABLE_COLUMNS_MAP.put("checkoutDate", Types.TIMESTAMP);
 		TABLE_COLUMNS_MAP.put("duration", Types.BIGINT);
 		TABLE_COLUMNS_MAP.put("checkinDate", Types.TIMESTAMP);
@@ -109,7 +108,7 @@ public class roomBookingModelImpl
 	}
 
 	public static final String TABLE_SQL_CREATE =
-		"create table hms_roomBooking (uuid_ VARCHAR(75) null,bookingID LONG not null primary key,groupId LONG,companyId LONG,userId LONG,userName VARCHAR(75) null,createDate DATE null,modifiedDate DATE null,roomID LONG,customerID VARCHAR(75) null,bookId LONG,rent DOUBLE,checkoutDate DATE null,duration LONG,checkinDate DATE null,cancelledDate DATE null)";
+		"create table hms_roomBooking (uuid_ VARCHAR(75) null,bookingID LONG not null primary key,groupId LONG,companyId LONG,userId LONG,userName VARCHAR(75) null,createDate DATE null,modifiedDate DATE null,roomID LONG,customerID VARCHAR(75) null,bookId LONG,checkoutDate DATE null,duration LONG,checkinDate DATE null,cancelledDate DATE null)";
 
 	public static final String TABLE_SQL_DROP = "drop table hms_roomBooking";
 
@@ -165,7 +164,6 @@ public class roomBookingModelImpl
 		model.setRoomID(soapModel.getRoomID());
 		model.setCustomerID(soapModel.getCustomerID());
 		model.setBookId(soapModel.getBookId());
-		model.setRent(soapModel.getRent());
 		model.setCheckoutDate(soapModel.getCheckoutDate());
 		model.setDuration(soapModel.getDuration());
 		model.setCheckinDate(soapModel.getCheckinDate());
@@ -334,9 +332,6 @@ public class roomBookingModelImpl
 		attributeGetterFunctions.put("bookId", roomBooking::getBookId);
 		attributeSetterBiConsumers.put(
 			"bookId", (BiConsumer<roomBooking, Long>)roomBooking::setBookId);
-		attributeGetterFunctions.put("rent", roomBooking::getRent);
-		attributeSetterBiConsumers.put(
-			"rent", (BiConsumer<roomBooking, Float>)roomBooking::setRent);
 		attributeGetterFunctions.put(
 			"checkoutDate", roomBooking::getCheckoutDate);
 		attributeSetterBiConsumers.put(
@@ -559,17 +554,6 @@ public class roomBookingModelImpl
 
 	@JSON
 	@Override
-	public float getRent() {
-		return _rent;
-	}
-
-	@Override
-	public void setRent(float rent) {
-		_rent = rent;
-	}
-
-	@JSON
-	@Override
 	public Date getCheckoutDate() {
 		return _checkoutDate;
 	}
@@ -661,7 +645,6 @@ public class roomBookingModelImpl
 		roomBookingImpl.setRoomID(getRoomID());
 		roomBookingImpl.setCustomerID(getCustomerID());
 		roomBookingImpl.setBookId(getBookId());
-		roomBookingImpl.setRent(getRent());
 		roomBookingImpl.setCheckoutDate(getCheckoutDate());
 		roomBookingImpl.setDuration(getDuration());
 		roomBookingImpl.setCheckinDate(getCheckinDate());
@@ -802,8 +785,6 @@ public class roomBookingModelImpl
 
 		roomBookingCacheModel.bookId = getBookId();
 
-		roomBookingCacheModel.rent = getRent();
-
 		Date checkoutDate = getCheckoutDate();
 
 		if (checkoutDate != null) {
@@ -924,7 +905,6 @@ public class roomBookingModelImpl
 	private long _roomID;
 	private String _customerID;
 	private long _bookId;
-	private float _rent;
 	private Date _checkoutDate;
 	private long _duration;
 	private Date _checkinDate;

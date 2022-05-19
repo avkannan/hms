@@ -66,7 +66,7 @@ public class roomBookingCacheModel
 
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(33);
+		StringBundler sb = new StringBundler(31);
 
 		sb.append("{uuid=");
 		sb.append(uuid);
@@ -90,8 +90,6 @@ public class roomBookingCacheModel
 		sb.append(customerID);
 		sb.append(", bookId=");
 		sb.append(bookId);
-		sb.append(", rent=");
-		sb.append(rent);
 		sb.append(", checkoutDate=");
 		sb.append(checkoutDate);
 		sb.append(", duration=");
@@ -152,7 +150,6 @@ public class roomBookingCacheModel
 		}
 
 		roomBookingImpl.setBookId(bookId);
-		roomBookingImpl.setRent(rent);
 
 		if (checkoutDate == Long.MIN_VALUE) {
 			roomBookingImpl.setCheckoutDate(null);
@@ -201,8 +198,6 @@ public class roomBookingCacheModel
 		customerID = objectInput.readUTF();
 
 		bookId = objectInput.readLong();
-
-		rent = objectInput.readFloat();
 		checkoutDate = objectInput.readLong();
 
 		duration = objectInput.readLong();
@@ -247,8 +242,6 @@ public class roomBookingCacheModel
 		}
 
 		objectOutput.writeLong(bookId);
-
-		objectOutput.writeFloat(rent);
 		objectOutput.writeLong(checkoutDate);
 
 		objectOutput.writeLong(duration);
@@ -267,7 +260,6 @@ public class roomBookingCacheModel
 	public long roomID;
 	public String customerID;
 	public long bookId;
-	public float rent;
 	public long checkoutDate;
 	public long duration;
 	public long checkinDate;
