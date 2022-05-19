@@ -36,7 +36,10 @@ create table hms_room (
 	roomNo LONG,
 	roomName VARCHAR(75) null,
 	facilities VARCHAR(75) null,
-	facilities2 VARCHAR(75) null
+	facilities2 VARCHAR(75) null,
+	payment LONG,
+	carddetails LONG,
+	cvv LONG
 );
 
 create table hms_roomBooking (
