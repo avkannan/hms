@@ -248,6 +248,21 @@ public interface roomModel
 	public void setRoomNo(long roomNo);
 
 	/**
+	 * Returns the room name of this room.
+	 *
+	 * @return the room name of this room
+	 */
+	@AutoEscape
+	public String getRoomName();
+
+	/**
+	 * Sets the room name of this room.
+	 *
+	 * @param roomName the room name of this room
+	 */
+	public void setRoomName(String roomName);
+
+	/**
 	 * Returns the facilities of this room.
 	 *
 	 * @return the facilities of this room

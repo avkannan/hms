@@ -56,6 +56,7 @@ public class roomWrapper
 		attributes.put("roomSize", getRoomSize());
 		attributes.put("images", getImages());
 		attributes.put("roomNo", getRoomNo());
+		attributes.put("roomName", getRoomName());
 		attributes.put("facilities", getFacilities());
 		attributes.put("facilities2", getFacilities2());
 
@@ -128,6 +129,12 @@ public class roomWrapper
 
 		if (roomNo != null) {
 			setRoomNo(roomNo);
+		}
+
+		String roomName = (String)attributes.get("roomName");
+
+		if (roomName != null) {
+			setRoomName(roomName);
 		}
 
 		String facilities = (String)attributes.get("facilities");
@@ -231,6 +238,16 @@ public class roomWrapper
 	@Override
 	public long getRoomID() {
 		return model.getRoomID();
+	}
+
+	/**
+	 * Returns the room name of this room.
+	 *
+	 * @return the room name of this room
+	 */
+	@Override
+	public String getRoomName() {
+		return model.getRoomName();
 	}
 
 	/**
@@ -386,6 +403,16 @@ public class roomWrapper
 	@Override
 	public void setRoomID(long roomID) {
 		model.setRoomID(roomID);
+	}
+
+	/**
+	 * Sets the room name of this room.
+	 *
+	 * @param roomName the room name of this room
+	 */
+	@Override
+	public void setRoomName(String roomName) {
+		model.setRoomName(roomName);
 	}
 
 	/**
