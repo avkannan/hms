@@ -71,8 +71,8 @@ create table hms_staff (
 	middleName VARCHAR(75) null,
 	lastName VARCHAR(75) null,
 	displayName VARCHAR(75) null,
+	salutationw VARCHAR(75) null,
 	salutation VARCHAR(75) null,
-	staffType VARCHAR(75) null,
 	designation VARCHAR(75) null,
 	qualifcation VARCHAR(75) null,
 	experience LONG

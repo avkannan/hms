@@ -138,8 +138,8 @@
 		<column name="middleName" type="String" />
 		<column name="lastName" type="String" />
 		<column name="displayName" type="String" />
+		<column name="salutationw" type="String" />
 		<column name="salutation" type="String" />
-		<column name="staffType" type="String" />
 		<column name="designation" type="String" />
 		<column name="qualifcation" type="String" />
 		<column name="experience" type="long" />

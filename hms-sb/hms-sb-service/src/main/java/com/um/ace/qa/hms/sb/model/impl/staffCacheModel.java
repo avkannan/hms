@@ -90,10 +90,10 @@ public class staffCacheModel implements CacheModel<staff>, Externalizable {
 		sb.append(lastName);
 		sb.append(", displayName=");
 		sb.append(displayName);
+		sb.append(", salutationw=");
+		sb.append(salutationw);
 		sb.append(", salutation=");
 		sb.append(salutation);
-		sb.append(", staffType=");
-		sb.append(staffType);
 		sb.append(", designation=");
 		sb.append(designation);
 		sb.append(", qualifcation=");
@@ -170,18 +170,18 @@ public class staffCacheModel implements CacheModel<staff>, Externalizable {
 			staffImpl.setDisplayName(displayName);
 		}
 
+		if (salutationw == null) {
+			staffImpl.setSalutationw("");
+		}
+		else {
+			staffImpl.setSalutationw(salutationw);
+		}
+
 		if (salutation == null) {
 			staffImpl.setSalutation("");
 		}
 		else {
 			staffImpl.setSalutation(salutation);
-		}
-
-		if (staffType == null) {
-			staffImpl.setStaffType("");
-		}
-		else {
-			staffImpl.setStaffType(staffType);
 		}
 
 		if (designation == null) {
@@ -223,8 +223,8 @@ public class staffCacheModel implements CacheModel<staff>, Externalizable {
 		middleName = objectInput.readUTF();
 		lastName = objectInput.readUTF();
 		displayName = objectInput.readUTF();
+		salutationw = objectInput.readUTF();
 		salutation = objectInput.readUTF();
-		staffType = objectInput.readUTF();
 		designation = objectInput.readUTF();
 		qualifcation = objectInput.readUTF();
 
@@ -286,18 +286,18 @@ public class staffCacheModel implements CacheModel<staff>, Externalizable {
 			objectOutput.writeUTF(displayName);
 		}
 
+		if (salutationw == null) {
+			objectOutput.writeUTF("");
+		}
+		else {
+			objectOutput.writeUTF(salutationw);
+		}
+
 		if (salutation == null) {
 			objectOutput.writeUTF("");
 		}
 		else {
 			objectOutput.writeUTF(salutation);
-		}
-
-		if (staffType == null) {
-			objectOutput.writeUTF("");
-		}
-		else {
-			objectOutput.writeUTF(staffType);
 		}
 
 		if (designation == null) {
@@ -329,8 +329,8 @@ public class staffCacheModel implements CacheModel<staff>, Externalizable {
 	public String middleName;
 	public String lastName;
 	public String displayName;
+	public String salutationw;
 	public String salutation;
-	public String staffType;
 	public String designation;
 	public String qualifcation;
 	public long experience;

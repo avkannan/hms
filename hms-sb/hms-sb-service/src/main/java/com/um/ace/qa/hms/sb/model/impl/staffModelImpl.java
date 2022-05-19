@@ -80,7 +80,7 @@ public class staffModelImpl extends BaseModelImpl<staff> implements staffModel {
 		{"createDate", Types.TIMESTAMP}, {"modifiedDate", Types.TIMESTAMP},
 		{"firstName", Types.VARCHAR}, {"middleName", Types.VARCHAR},
 		{"lastName", Types.VARCHAR}, {"displayName", Types.VARCHAR},
-		{"salutation", Types.VARCHAR}, {"staffType", Types.VARCHAR},
+		{"salutationw", Types.VARCHAR}, {"salutation", Types.VARCHAR},
 		{"designation", Types.VARCHAR}, {"qualifcation", Types.VARCHAR},
 		{"experience", Types.BIGINT}
 	};
@@ -101,15 +101,15 @@ public class staffModelImpl extends BaseModelImpl<staff> implements staffModel {
 		TABLE_COLUMNS_MAP.put("middleName", Types.VARCHAR);
 		TABLE_COLUMNS_MAP.put("lastName", Types.VARCHAR);
 		TABLE_COLUMNS_MAP.put("displayName", Types.VARCHAR);
+		TABLE_COLUMNS_MAP.put("salutationw", Types.VARCHAR);
 		TABLE_COLUMNS_MAP.put("salutation", Types.VARCHAR);
-		TABLE_COLUMNS_MAP.put("staffType", Types.VARCHAR);
 		TABLE_COLUMNS_MAP.put("designation", Types.VARCHAR);
 		TABLE_COLUMNS_MAP.put("qualifcation", Types.VARCHAR);
 		TABLE_COLUMNS_MAP.put("experience", Types.BIGINT);
 	}
 
 	public static final String TABLE_SQL_CREATE =
-		"create table hms_staff (uuid_ VARCHAR(75) null,staffID LONG not null primary key,groupId LONG,companyId LONG,userId LONG,userName VARCHAR(75) null,createDate DATE null,modifiedDate DATE null,firstName VARCHAR(75) null,middleName VARCHAR(75) null,lastName VARCHAR(75) null,displayName VARCHAR(75) null,salutation VARCHAR(75) null,staffType VARCHAR(75) null,designation VARCHAR(75) null,qualifcation VARCHAR(75) null,experience LONG)";
+		"create table hms_staff (uuid_ VARCHAR(75) null,staffID LONG not null primary key,groupId LONG,companyId LONG,userId LONG,userName VARCHAR(75) null,createDate DATE null,modifiedDate DATE null,firstName VARCHAR(75) null,middleName VARCHAR(75) null,lastName VARCHAR(75) null,displayName VARCHAR(75) null,salutationw VARCHAR(75) null,salutation VARCHAR(75) null,designation VARCHAR(75) null,qualifcation VARCHAR(75) null,experience LONG)";
 
 	public static final String TABLE_SQL_DROP = "drop table hms_staff";
 
@@ -166,8 +166,8 @@ public class staffModelImpl extends BaseModelImpl<staff> implements staffModel {
 		model.setMiddleName(soapModel.getMiddleName());
 		model.setLastName(soapModel.getLastName());
 		model.setDisplayName(soapModel.getDisplayName());
+		model.setSalutationw(soapModel.getSalutationw());
 		model.setSalutation(soapModel.getSalutation());
-		model.setStaffType(soapModel.getStaffType());
 		model.setDesignation(soapModel.getDesignation());
 		model.setQualifcation(soapModel.getQualifcation());
 		model.setExperience(soapModel.getExperience());
@@ -325,12 +325,12 @@ public class staffModelImpl extends BaseModelImpl<staff> implements staffModel {
 		attributeGetterFunctions.put("displayName", staff::getDisplayName);
 		attributeSetterBiConsumers.put(
 			"displayName", (BiConsumer<staff, String>)staff::setDisplayName);
+		attributeGetterFunctions.put("salutationw", staff::getSalutationw);
+		attributeSetterBiConsumers.put(
+			"salutationw", (BiConsumer<staff, String>)staff::setSalutationw);
 		attributeGetterFunctions.put("salutation", staff::getSalutation);
 		attributeSetterBiConsumers.put(
 			"salutation", (BiConsumer<staff, String>)staff::setSalutation);
-		attributeGetterFunctions.put("staffType", staff::getStaffType);
-		attributeSetterBiConsumers.put(
-			"staffType", (BiConsumer<staff, String>)staff::setStaffType);
 		attributeGetterFunctions.put("designation", staff::getDesignation);
 		attributeSetterBiConsumers.put(
 			"designation", (BiConsumer<staff, String>)staff::setDesignation);
@@ -569,6 +569,22 @@ public class staffModelImpl extends BaseModelImpl<staff> implements staffModel {
 
 	@JSON
 	@Override
+	public String getSalutationw() {
+		if (_salutationw == null) {
+			return "";
+		}
+		else {
+			return _salutationw;
+		}
+	}
+
+	@Override
+	public void setSalutationw(String salutationw) {
+		_salutationw = salutationw;
+	}
+
+	@JSON
+	@Override
 	public String getSalutation() {
 		if (_salutation == null) {
 			return "";
@@ -581,22 +597,6 @@ public class staffModelImpl extends BaseModelImpl<staff> implements staffModel {
 	@Override
 	public void setSalutation(String salutation) {
 		_salutation = salutation;
-	}
-
-	@JSON
-	@Override
-	public String getStaffType() {
-		if (_staffType == null) {
-			return "";
-		}
-		else {
-			return _staffType;
-		}
-	}
-
-	@Override
-	public void setStaffType(String staffType) {
-		_staffType = staffType;
 	}
 
 	@JSON
@@ -692,8 +692,8 @@ public class staffModelImpl extends BaseModelImpl<staff> implements staffModel {
 		staffImpl.setMiddleName(getMiddleName());
 		staffImpl.setLastName(getLastName());
 		staffImpl.setDisplayName(getDisplayName());
+		staffImpl.setSalutationw(getSalutationw());
 		staffImpl.setSalutation(getSalutation());
-		staffImpl.setStaffType(getStaffType());
 		staffImpl.setDesignation(getDesignation());
 		staffImpl.setQualifcation(getQualifcation());
 		staffImpl.setExperience(getExperience());
@@ -850,20 +850,20 @@ public class staffModelImpl extends BaseModelImpl<staff> implements staffModel {
 			staffCacheModel.displayName = null;
 		}
 
+		staffCacheModel.salutationw = getSalutationw();
+
+		String salutationw = staffCacheModel.salutationw;
+
+		if ((salutationw != null) && (salutationw.length() == 0)) {
+			staffCacheModel.salutationw = null;
+		}
+
 		staffCacheModel.salutation = getSalutation();
 
 		String salutation = staffCacheModel.salutation;
 
 		if ((salutation != null) && (salutation.length() == 0)) {
 			staffCacheModel.salutation = null;
-		}
-
-		staffCacheModel.staffType = getStaffType();
-
-		String staffType = staffCacheModel.staffType;
-
-		if ((staffType != null) && (staffType.length() == 0)) {
-			staffCacheModel.staffType = null;
 		}
 
 		staffCacheModel.designation = getDesignation();
@@ -974,8 +974,8 @@ public class staffModelImpl extends BaseModelImpl<staff> implements staffModel {
 	private String _middleName;
 	private String _lastName;
 	private String _displayName;
+	private String _salutationw;
 	private String _salutation;
-	private String _staffType;
 	private String _designation;
 	private String _qualifcation;
 	private long _experience;

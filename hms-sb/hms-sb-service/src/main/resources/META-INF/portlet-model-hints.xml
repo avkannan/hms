@@ -71,8 +71,8 @@
 		<field name="middleName" type="String" />
 		<field name="lastName" type="String" />
 		<field name="displayName" type="String" />
+		<field name="salutationw" type="String" />
 		<field name="salutation" type="String" />
-		<field name="staffType" type="String" />
 		<field name="designation" type="String" />
 		<field name="qualifcation" type="String" />
 		<field name="experience" type="long" />
