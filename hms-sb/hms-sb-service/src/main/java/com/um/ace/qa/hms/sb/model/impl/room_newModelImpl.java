@@ -82,6 +82,7 @@ public class room_newModelImpl
 		{"roomSize", Types.VARCHAR}, {"images", Types.VARCHAR},
 		{"roomNo", Types.BIGINT}, {"roomName", Types.VARCHAR},
 		{"facilities", Types.VARCHAR}, {"facilities2", Types.VARCHAR},
+		{"facilities3", Types.VARCHAR}, {"facilities4", Types.VARCHAR},
 		{"payment", Types.BIGINT}, {"carddetails", Types.BIGINT},
 		{"cvv", Types.BIGINT}
 	};
@@ -104,13 +105,15 @@ public class room_newModelImpl
 		TABLE_COLUMNS_MAP.put("roomName", Types.VARCHAR);
 		TABLE_COLUMNS_MAP.put("facilities", Types.VARCHAR);
 		TABLE_COLUMNS_MAP.put("facilities2", Types.VARCHAR);
+		TABLE_COLUMNS_MAP.put("facilities3", Types.VARCHAR);
+		TABLE_COLUMNS_MAP.put("facilities4", Types.VARCHAR);
 		TABLE_COLUMNS_MAP.put("payment", Types.BIGINT);
 		TABLE_COLUMNS_MAP.put("carddetails", Types.BIGINT);
 		TABLE_COLUMNS_MAP.put("cvv", Types.BIGINT);
 	}
 
 	public static final String TABLE_SQL_CREATE =
-		"create table hms_room_new (uuid_ VARCHAR(75) null,roomID LONG not null primary key,groupId LONG,companyId LONG,userId LONG,userName VARCHAR(75) null,createDate DATE null,modifiedDate DATE null,roomSize VARCHAR(75) null,images VARCHAR(75) null,roomNo LONG,roomName VARCHAR(75) null,facilities VARCHAR(75) null,facilities2 VARCHAR(75) null,payment LONG,carddetails LONG,cvv LONG)";
+		"create table hms_room_new (uuid_ VARCHAR(75) null,roomID LONG not null primary key,groupId LONG,companyId LONG,userId LONG,userName VARCHAR(75) null,createDate DATE null,modifiedDate DATE null,roomSize VARCHAR(75) null,images VARCHAR(75) null,roomNo LONG,roomName VARCHAR(75) null,facilities VARCHAR(75) null,facilities2 VARCHAR(75) null,facilities3 VARCHAR(75) null,facilities4 VARCHAR(75) null,payment LONG,carddetails LONG,cvv LONG)";
 
 	public static final String TABLE_SQL_DROP = "drop table hms_room_new";
 
@@ -168,6 +171,8 @@ public class room_newModelImpl
 		model.setRoomName(soapModel.getRoomName());
 		model.setFacilities(soapModel.getFacilities());
 		model.setFacilities2(soapModel.getFacilities2());
+		model.setFacilities3(soapModel.getFacilities3());
+		model.setFacilities4(soapModel.getFacilities4());
 		model.setPayment(soapModel.getPayment());
 		model.setCarddetails(soapModel.getCarddetails());
 		model.setCvv(soapModel.getCvv());
@@ -338,6 +343,14 @@ public class room_newModelImpl
 		attributeSetterBiConsumers.put(
 			"facilities2",
 			(BiConsumer<room_new, String>)room_new::setFacilities2);
+		attributeGetterFunctions.put("facilities3", room_new::getFacilities3);
+		attributeSetterBiConsumers.put(
+			"facilities3",
+			(BiConsumer<room_new, String>)room_new::setFacilities3);
+		attributeGetterFunctions.put("facilities4", room_new::getFacilities4);
+		attributeSetterBiConsumers.put(
+			"facilities4",
+			(BiConsumer<room_new, String>)room_new::setFacilities4);
 		attributeGetterFunctions.put("payment", room_new::getPayment);
 		attributeSetterBiConsumers.put(
 			"payment", (BiConsumer<room_new, Long>)room_new::setPayment);
@@ -604,6 +617,38 @@ public class room_newModelImpl
 
 	@JSON
 	@Override
+	public String getFacilities3() {
+		if (_facilities3 == null) {
+			return "";
+		}
+		else {
+			return _facilities3;
+		}
+	}
+
+	@Override
+	public void setFacilities3(String facilities3) {
+		_facilities3 = facilities3;
+	}
+
+	@JSON
+	@Override
+	public String getFacilities4() {
+		if (_facilities4 == null) {
+			return "";
+		}
+		else {
+			return _facilities4;
+		}
+	}
+
+	@Override
+	public void setFacilities4(String facilities4) {
+		_facilities4 = facilities4;
+	}
+
+	@JSON
+	@Override
 	public long getPayment() {
 		return _payment;
 	}
@@ -687,6 +732,8 @@ public class room_newModelImpl
 		room_newImpl.setRoomName(getRoomName());
 		room_newImpl.setFacilities(getFacilities());
 		room_newImpl.setFacilities2(getFacilities2());
+		room_newImpl.setFacilities3(getFacilities3());
+		room_newImpl.setFacilities4(getFacilities4());
 		room_newImpl.setPayment(getPayment());
 		room_newImpl.setCarddetails(getCarddetails());
 		room_newImpl.setCvv(getCvv());
@@ -861,6 +908,22 @@ public class room_newModelImpl
 			room_newCacheModel.facilities2 = null;
 		}
 
+		room_newCacheModel.facilities3 = getFacilities3();
+
+		String facilities3 = room_newCacheModel.facilities3;
+
+		if ((facilities3 != null) && (facilities3.length() == 0)) {
+			room_newCacheModel.facilities3 = null;
+		}
+
+		room_newCacheModel.facilities4 = getFacilities4();
+
+		String facilities4 = room_newCacheModel.facilities4;
+
+		if ((facilities4 != null) && (facilities4.length() == 0)) {
+			room_newCacheModel.facilities4 = null;
+		}
+
 		room_newCacheModel.payment = getPayment();
 
 		room_newCacheModel.carddetails = getCarddetails();
@@ -961,6 +1024,8 @@ public class room_newModelImpl
 	private String _roomName;
 	private String _facilities;
 	private String _facilities2;
+	private String _facilities3;
+	private String _facilities4;
 	private long _payment;
 	private long _carddetails;
 	private long _cvv;

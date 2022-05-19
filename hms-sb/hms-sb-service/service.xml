@@ -244,6 +244,8 @@
 		<column name="roomName" type="String" />
 		<column name="facilities" type="String" />
 		<column name="facilities2" type="String" />
+		<column name="facilities3" type="String" />
+		<column name="facilities4" type="String" />
 		<column name="payment" type="long" />
 		<column name="carddetails" type="long" />
 		<column name="cvv" type="long" />

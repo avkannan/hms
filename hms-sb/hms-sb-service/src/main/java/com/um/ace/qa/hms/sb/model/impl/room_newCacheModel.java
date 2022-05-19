@@ -65,7 +65,7 @@ public class room_newCacheModel
 
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(35);
+		StringBundler sb = new StringBundler(39);
 
 		sb.append("{uuid=");
 		sb.append(uuid);
@@ -95,6 +95,10 @@ public class room_newCacheModel
 		sb.append(facilities);
 		sb.append(", facilities2=");
 		sb.append(facilities2);
+		sb.append(", facilities3=");
+		sb.append(facilities3);
+		sb.append(", facilities4=");
+		sb.append(facilities4);
 		sb.append(", payment=");
 		sb.append(payment);
 		sb.append(", carddetails=");
@@ -180,6 +184,20 @@ public class room_newCacheModel
 			room_newImpl.setFacilities2(facilities2);
 		}
 
+		if (facilities3 == null) {
+			room_newImpl.setFacilities3("");
+		}
+		else {
+			room_newImpl.setFacilities3(facilities3);
+		}
+
+		if (facilities4 == null) {
+			room_newImpl.setFacilities4("");
+		}
+		else {
+			room_newImpl.setFacilities4(facilities4);
+		}
+
 		room_newImpl.setPayment(payment);
 		room_newImpl.setCarddetails(carddetails);
 		room_newImpl.setCvv(cvv);
@@ -210,6 +228,8 @@ public class room_newCacheModel
 		roomName = objectInput.readUTF();
 		facilities = objectInput.readUTF();
 		facilities2 = objectInput.readUTF();
+		facilities3 = objectInput.readUTF();
+		facilities4 = objectInput.readUTF();
 
 		payment = objectInput.readLong();
 
@@ -282,6 +302,20 @@ public class room_newCacheModel
 			objectOutput.writeUTF(facilities2);
 		}
 
+		if (facilities3 == null) {
+			objectOutput.writeUTF("");
+		}
+		else {
+			objectOutput.writeUTF(facilities3);
+		}
+
+		if (facilities4 == null) {
+			objectOutput.writeUTF("");
+		}
+		else {
+			objectOutput.writeUTF(facilities4);
+		}
+
 		objectOutput.writeLong(payment);
 
 		objectOutput.writeLong(carddetails);
@@ -303,6 +337,8 @@ public class room_newCacheModel
 	public String roomName;
 	public String facilities;
 	public String facilities2;
+	public String facilities3;
+	public String facilities4;
 	public long payment;
 	public long carddetails;
 	public long cvv;
