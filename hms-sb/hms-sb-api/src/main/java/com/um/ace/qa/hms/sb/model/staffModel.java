@@ -264,6 +264,21 @@ public interface staffModel
 	public void setDisplayName(String displayName);
 
 	/**
+	 * Returns the salutationw of this staff.
+	 *
+	 * @return the salutationw of this staff
+	 */
+	@AutoEscape
+	public String getSalutationw();
+
+	/**
+	 * Sets the salutationw of this staff.
+	 *
+	 * @param salutationw the salutationw of this staff
+	 */
+	public void setSalutationw(String salutationw);
+
+	/**
 	 * Returns the salutation of this staff.
 	 *
 	 * @return the salutation of this staff
@@ -277,21 +292,6 @@ public interface staffModel
 	 * @param salutation the salutation of this staff
 	 */
 	public void setSalutation(String salutation);
-
-	/**
-	 * Returns the staff type of this staff.
-	 *
-	 * @return the staff type of this staff
-	 */
-	@AutoEscape
-	public String getStaffType();
-
-	/**
-	 * Sets the staff type of this staff.
-	 *
-	 * @param staffType the staff type of this staff
-	 */
-	public void setStaffType(String staffType);
 
 	/**
 	 * Returns the designation of this staff.

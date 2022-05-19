@@ -57,8 +57,8 @@ public class staffWrapper
 		attributes.put("middleName", getMiddleName());
 		attributes.put("lastName", getLastName());
 		attributes.put("displayName", getDisplayName());
+		attributes.put("salutationw", getSalutationw());
 		attributes.put("salutation", getSalutation());
-		attributes.put("staffType", getStaffType());
 		attributes.put("designation", getDesignation());
 		attributes.put("qualifcation", getQualifcation());
 		attributes.put("experience", getExperience());
@@ -140,16 +140,16 @@ public class staffWrapper
 			setDisplayName(displayName);
 		}
 
+		String salutationw = (String)attributes.get("salutationw");
+
+		if (salutationw != null) {
+			setSalutationw(salutationw);
+		}
+
 		String salutation = (String)attributes.get("salutation");
 
 		if (salutation != null) {
 			setSalutation(salutation);
-		}
-
-		String staffType = (String)attributes.get("staffType");
-
-		if (staffType != null) {
-			setStaffType(staffType);
 		}
 
 		String designation = (String)attributes.get("designation");
@@ -302,6 +302,16 @@ public class staffWrapper
 	}
 
 	/**
+	 * Returns the salutationw of this staff.
+	 *
+	 * @return the salutationw of this staff
+	 */
+	@Override
+	public String getSalutationw() {
+		return model.getSalutationw();
+	}
+
+	/**
 	 * Returns the staff ID of this staff.
 	 *
 	 * @return the staff ID of this staff
@@ -309,16 +319,6 @@ public class staffWrapper
 	@Override
 	public long getStaffID() {
 		return model.getStaffID();
-	}
-
-	/**
-	 * Returns the staff type of this staff.
-	 *
-	 * @return the staff type of this staff
-	 */
-	@Override
-	public String getStaffType() {
-		return model.getStaffType();
 	}
 
 	/**
@@ -497,6 +497,16 @@ public class staffWrapper
 	}
 
 	/**
+	 * Sets the salutationw of this staff.
+	 *
+	 * @param salutationw the salutationw of this staff
+	 */
+	@Override
+	public void setSalutationw(String salutationw) {
+		model.setSalutationw(salutationw);
+	}
+
+	/**
 	 * Sets the staff ID of this staff.
 	 *
 	 * @param staffID the staff ID of this staff
@@ -504,16 +514,6 @@ public class staffWrapper
 	@Override
 	public void setStaffID(long staffID) {
 		model.setStaffID(staffID);
-	}
-
-	/**
-	 * Sets the staff type of this staff.
-	 *
-	 * @param staffType the staff type of this staff
-	 */
-	@Override
-	public void setStaffType(String staffType) {
-		model.setStaffType(staffType);
 	}
 
 	/**

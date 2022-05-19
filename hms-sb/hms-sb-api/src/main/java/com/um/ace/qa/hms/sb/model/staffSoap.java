@@ -46,8 +46,8 @@ public class staffSoap implements Serializable {
 		soapModel.setMiddleName(model.getMiddleName());
 		soapModel.setLastName(model.getLastName());
 		soapModel.setDisplayName(model.getDisplayName());
+		soapModel.setSalutationw(model.getSalutationw());
 		soapModel.setSalutation(model.getSalutation());
-		soapModel.setStaffType(model.getStaffType());
 		soapModel.setDesignation(model.getDesignation());
 		soapModel.setQualifcation(model.getQualifcation());
 		soapModel.setExperience(model.getExperience());
@@ -199,20 +199,20 @@ public class staffSoap implements Serializable {
 		_displayName = displayName;
 	}
 
+	public String getSalutationw() {
+		return _salutationw;
+	}
+
+	public void setSalutationw(String salutationw) {
+		_salutationw = salutationw;
+	}
+
 	public String getSalutation() {
 		return _salutation;
 	}
 
 	public void setSalutation(String salutation) {
 		_salutation = salutation;
-	}
-
-	public String getStaffType() {
-		return _staffType;
-	}
-
-	public void setStaffType(String staffType) {
-		_staffType = staffType;
 	}
 
 	public String getDesignation() {
@@ -251,8 +251,8 @@ public class staffSoap implements Serializable {
 	private String _middleName;
 	private String _lastName;
 	private String _displayName;
+	private String _salutationw;
 	private String _salutation;
-	private String _staffType;
 	private String _designation;
 	private String _qualifcation;
 	private long _experience;
