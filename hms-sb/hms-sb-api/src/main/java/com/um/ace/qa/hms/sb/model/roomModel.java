@@ -292,4 +292,46 @@ public interface roomModel
 	 */
 	public void setFacilities2(String facilities2);
 
+	/**
+	 * Returns the payment of this room.
+	 *
+	 * @return the payment of this room
+	 */
+	public long getPayment();
+
+	/**
+	 * Sets the payment of this room.
+	 *
+	 * @param payment the payment of this room
+	 */
+	public void setPayment(long payment);
+
+	/**
+	 * Returns the carddetails of this room.
+	 *
+	 * @return the carddetails of this room
+	 */
+	public long getCarddetails();
+
+	/**
+	 * Sets the carddetails of this room.
+	 *
+	 * @param carddetails the carddetails of this room
+	 */
+	public void setCarddetails(long carddetails);
+
+	/**
+	 * Returns the cvv of this room.
+	 *
+	 * @return the cvv of this room
+	 */
+	public long getCvv();
+
+	/**
+	 * Sets the cvv of this room.
+	 *
+	 * @param cvv the cvv of this room
+	 */
+	public void setCvv(long cvv);
+
 }

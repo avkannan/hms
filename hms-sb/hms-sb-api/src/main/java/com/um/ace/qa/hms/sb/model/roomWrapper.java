@@ -59,6 +59,9 @@ public class roomWrapper
 		attributes.put("roomName", getRoomName());
 		attributes.put("facilities", getFacilities());
 		attributes.put("facilities2", getFacilities2());
+		attributes.put("payment", getPayment());
+		attributes.put("carddetails", getCarddetails());
+		attributes.put("cvv", getCvv());
 
 		return attributes;
 	}
@@ -148,6 +151,34 @@ public class roomWrapper
 		if (facilities2 != null) {
 			setFacilities2(facilities2);
 		}
+
+		Long payment = (Long)attributes.get("payment");
+
+		if (payment != null) {
+			setPayment(payment);
+		}
+
+		Long carddetails = (Long)attributes.get("carddetails");
+
+		if (carddetails != null) {
+			setCarddetails(carddetails);
+		}
+
+		Long cvv = (Long)attributes.get("cvv");
+
+		if (cvv != null) {
+			setCvv(cvv);
+		}
+	}
+
+	/**
+	 * Returns the carddetails of this room.
+	 *
+	 * @return the carddetails of this room
+	 */
+	@Override
+	public long getCarddetails() {
+		return model.getCarddetails();
 	}
 
 	/**
@@ -168,6 +199,16 @@ public class roomWrapper
 	@Override
 	public Date getCreateDate() {
 		return model.getCreateDate();
+	}
+
+	/**
+	 * Returns the cvv of this room.
+	 *
+	 * @return the cvv of this room
+	 */
+	@Override
+	public long getCvv() {
+		return model.getCvv();
 	}
 
 	/**
@@ -218,6 +259,16 @@ public class roomWrapper
 	@Override
 	public Date getModifiedDate() {
 		return model.getModifiedDate();
+	}
+
+	/**
+	 * Returns the payment of this room.
+	 *
+	 * @return the payment of this room
+	 */
+	@Override
+	public long getPayment() {
+		return model.getPayment();
 	}
 
 	/**
@@ -316,6 +367,16 @@ public class roomWrapper
 	}
 
 	/**
+	 * Sets the carddetails of this room.
+	 *
+	 * @param carddetails the carddetails of this room
+	 */
+	@Override
+	public void setCarddetails(long carddetails) {
+		model.setCarddetails(carddetails);
+	}
+
+	/**
 	 * Sets the company ID of this room.
 	 *
 	 * @param companyId the company ID of this room
@@ -333,6 +394,16 @@ public class roomWrapper
 	@Override
 	public void setCreateDate(Date createDate) {
 		model.setCreateDate(createDate);
+	}
+
+	/**
+	 * Sets the cvv of this room.
+	 *
+	 * @param cvv the cvv of this room
+	 */
+	@Override
+	public void setCvv(long cvv) {
+		model.setCvv(cvv);
 	}
 
 	/**
@@ -383,6 +454,16 @@ public class roomWrapper
 	@Override
 	public void setModifiedDate(Date modifiedDate) {
 		model.setModifiedDate(modifiedDate);
+	}
+
+	/**
+	 * Sets the payment of this room.
+	 *
+	 * @param payment the payment of this room
+	 */
+	@Override
+	public void setPayment(long payment) {
+		model.setPayment(payment);
 	}
 
 	/**

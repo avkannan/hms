@@ -48,6 +48,9 @@ public class roomSoap implements Serializable {
 		soapModel.setRoomName(model.getRoomName());
 		soapModel.setFacilities(model.getFacilities());
 		soapModel.setFacilities2(model.getFacilities2());
+		soapModel.setPayment(model.getPayment());
+		soapModel.setCarddetails(model.getCarddetails());
+		soapModel.setCvv(model.getCvv());
 
 		return soapModel;
 	}
@@ -212,6 +215,30 @@ public class roomSoap implements Serializable {
 		_facilities2 = facilities2;
 	}
 
+	public long getPayment() {
+		return _payment;
+	}
+
+	public void setPayment(long payment) {
+		_payment = payment;
+	}
+
+	public long getCarddetails() {
+		return _carddetails;
+	}
+
+	public void setCarddetails(long carddetails) {
+		_carddetails = carddetails;
+	}
+
+	public long getCvv() {
+		return _cvv;
+	}
+
+	public void setCvv(long cvv) {
+		_cvv = cvv;
+	}
+
 	private String _uuid;
 	private long _roomID;
 	private long _groupId;
@@ -226,5 +253,8 @@ public class roomSoap implements Serializable {
 	private String _roomName;
 	private String _facilities;
 	private String _facilities2;
+	private long _payment;
+	private long _carddetails;
+	private long _cvv;
 
 }
