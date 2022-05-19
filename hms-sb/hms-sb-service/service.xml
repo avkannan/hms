@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_2_0.dtd">
+
+<service-builder dependency-injector="ds"
+	package-path="com.um.ace.qa.hms.sb">
+	<namespace>hms</namespace>
+	<entity local-service="true" name="customer"
+		remote-service="true" uuid="true">
+
+		<!-- PK fields -->
+		<column name="customerID" primary="true" type="long" />
+
+		<!-- Group instance -->
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+
+		<column name="firstName" type="String" />
+		<column name="middleName" type="String" />
+		<column name="lastName" type="String" />
+		<column name="displayName" type="String" />
+		<column name="salutation" type="String" />
+		<column name="address1" type="String" />
+		<column name="address2" type="String" />
+		<column name="address3" type="long" />
+		<column name="city" type="long" />
+		<column name="country" type="long" />
+		<column name="state" type="long" />
+		<column name="zip" type="long" />
+		<column name="phone" type="long" />
+
+
+		<!-- Order -->
+
+		<order by="asc">
+			<order-column name="displayName" />
+		</order>
+	</entity>
+</service-builder>

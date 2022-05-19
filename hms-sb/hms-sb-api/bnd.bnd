@@ -1,0 +1,10 @@
+Bundle-Name: hms-sb-api
+Bundle-SymbolicName: com.um.ace.qa.hms.sb.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.um.ace.qa.hms.sb.exception,\
+	com.um.ace.qa.hms.sb.model,\
+	com.um.ace.qa.hms.sb.service,\
+	com.um.ace.qa.hms.sb.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../hms-sb-service/service.xml

@@ -1,0 +1,11 @@
+dependencies {
+	compileOnly 'com.liferay.portal:release.dxp.api:7.2.10.1'
+
+	compileOnly project(":modules:hms-sb:hms-sb-api")
+}
+
+buildService {
+	apiDir = "../hms-sb-api/src/main/java"
+}
+
+group = "com.um.ace.qa.hms.sb"

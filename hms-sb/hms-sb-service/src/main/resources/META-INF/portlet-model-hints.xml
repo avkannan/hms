@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.um.ace.qa.hms.sb.model.customer">
+		<field name="uuid" type="String" />
+		<field name="customerID" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="firstName" type="String" />
+		<field name="middleName" type="String" />
+		<field name="lastName" type="String" />
+		<field name="displayName" type="String" />
+		<field name="salutation" type="String" />
+		<field name="address1" type="String" />
+		<field name="address2" type="String" />
+		<field name="address3" type="long" />
+		<field name="city" type="long" />
+		<field name="country" type="long" />
+		<field name="state" type="long" />
+		<field name="zip" type="long" />
+		<field name="phone" type="long" />
+	</model>
+</model-hints>
