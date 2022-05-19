@@ -294,6 +294,36 @@ public interface room_newModel
 	public void setFacilities2(String facilities2);
 
 	/**
+	 * Returns the facilities3 of this room_new.
+	 *
+	 * @return the facilities3 of this room_new
+	 */
+	@AutoEscape
+	public String getFacilities3();
+
+	/**
+	 * Sets the facilities3 of this room_new.
+	 *
+	 * @param facilities3 the facilities3 of this room_new
+	 */
+	public void setFacilities3(String facilities3);
+
+	/**
+	 * Returns the facilities4 of this room_new.
+	 *
+	 * @return the facilities4 of this room_new
+	 */
+	@AutoEscape
+	public String getFacilities4();
+
+	/**
+	 * Sets the facilities4 of this room_new.
+	 *
+	 * @param facilities4 the facilities4 of this room_new
+	 */
+	public void setFacilities4(String facilities4);
+
+	/**
 	 * Returns the payment of this room_new.
 	 *
 	 * @return the payment of this room_new

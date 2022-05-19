@@ -60,6 +60,8 @@ public class room_newWrapper
 		attributes.put("roomName", getRoomName());
 		attributes.put("facilities", getFacilities());
 		attributes.put("facilities2", getFacilities2());
+		attributes.put("facilities3", getFacilities3());
+		attributes.put("facilities4", getFacilities4());
 		attributes.put("payment", getPayment());
 		attributes.put("carddetails", getCarddetails());
 		attributes.put("cvv", getCvv());
@@ -153,6 +155,18 @@ public class room_newWrapper
 			setFacilities2(facilities2);
 		}
 
+		String facilities3 = (String)attributes.get("facilities3");
+
+		if (facilities3 != null) {
+			setFacilities3(facilities3);
+		}
+
+		String facilities4 = (String)attributes.get("facilities4");
+
+		if (facilities4 != null) {
+			setFacilities4(facilities4);
+		}
+
 		Long payment = (Long)attributes.get("payment");
 
 		if (payment != null) {
@@ -230,6 +244,26 @@ public class room_newWrapper
 	@Override
 	public String getFacilities2() {
 		return model.getFacilities2();
+	}
+
+	/**
+	 * Returns the facilities3 of this room_new.
+	 *
+	 * @return the facilities3 of this room_new
+	 */
+	@Override
+	public String getFacilities3() {
+		return model.getFacilities3();
+	}
+
+	/**
+	 * Returns the facilities4 of this room_new.
+	 *
+	 * @return the facilities4 of this room_new
+	 */
+	@Override
+	public String getFacilities4() {
+		return model.getFacilities4();
 	}
 
 	/**
@@ -425,6 +459,26 @@ public class room_newWrapper
 	@Override
 	public void setFacilities2(String facilities2) {
 		model.setFacilities2(facilities2);
+	}
+
+	/**
+	 * Sets the facilities3 of this room_new.
+	 *
+	 * @param facilities3 the facilities3 of this room_new
+	 */
+	@Override
+	public void setFacilities3(String facilities3) {
+		model.setFacilities3(facilities3);
+	}
+
+	/**
+	 * Sets the facilities4 of this room_new.
+	 *
+	 * @param facilities4 the facilities4 of this room_new
+	 */
+	@Override
+	public void setFacilities4(String facilities4) {
+		model.setFacilities4(facilities4);
 	}
 
 	/**
